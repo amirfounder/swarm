@@ -28,11 +28,12 @@
 
 button {
   font-size: 13px;
-  padding: 8px 12px;
+  padding: 6px 16px;
   cursor: pointer;
   background-color: #2e5da3;
   color: white;
-  border: 1px solid #2e5da3
+  border: 1px solid #2e5da3;
+  line-height: 1.2em;
 }
 
 input {

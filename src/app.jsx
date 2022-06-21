@@ -9,12 +9,8 @@ const parseFirstName = (name) => name?.split(' ')?.at(0)
 
 
 export const App = () => {
-  const [name, setName] = useState('')
-  const [company, setCompany] = useState('')
-  const [headline, setHeadline] = useState('')
   const [message, setMessage] = useState('')
   const [copyButtonText, setCopyButtonText] = useState('Copy')
-  const [associatedJobPosting, setAssociatedJobPosting] = useState('')
   const [activeTemplateKey, setActiveTemplateKey] = useState('')
   const [personalizationData, setPersonalizationData] = useState({})
 
@@ -32,7 +28,7 @@ export const App = () => {
           firstName: parseFirstName(name),
           company,
           headline,
-          associatedJobPosting
+          associatedJobPosting: ''
         }
 
         let templateKey;
@@ -129,7 +125,7 @@ export const App = () => {
                       <li key={key} className={classNames.join(' ')}
                         onClick={() => {
                           setActiveTemplateKey(key);
-                          setMessage(formatTemplate(template, { firstName: name?.split(' ')?.at(0), associatedJobPosting }))
+                          setMessage(formatTemplate(template, personalizationData))
                         }}
                       >
                         <span>
@@ -141,16 +137,14 @@ export const App = () => {
                   )}
                 </ul>
               </div>
-              <div>
-                <button
-                  onClick={async () => {
-                    await copy(message)
-                    setCopyButtonText('Copied!')
-                  }}
-                >
-                  {copyButtonText}
-                </button>
-              </div>
+              <button
+                onClick={async () => {
+                  await copy(message)
+                  setCopyButtonText('Copied!')
+                }}
+              >
+                {copyButtonText}
+              </button>
             </div>
           </div>
         </div>
