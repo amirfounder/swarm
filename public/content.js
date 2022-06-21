@@ -1,3 +1,17 @@
+const observer = new MutationObserver((_mutations, _observer) => {
+  const customMessage = document.querySelector('#custom-message')
+  if (customMessage !== null) {
+    console.log('Custom Message found!')
+    customMessage.rows = '15'
+    _observer.disconnect()
+  }
+})
+
+observer.observe(document, {
+  childList: true,
+  subtree: true
+})
+
 const scrapeLinkedInProfile = () => ({
   name: document.querySelector('h1')?.innerText,
   company: document.querySelector('a[href="#experience"]')?.innerText,

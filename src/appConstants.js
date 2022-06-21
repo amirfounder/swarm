@@ -2,12 +2,11 @@ export const CONNECTION_NOTE_TEMPLATE = `\
 Good {timeOfDay} {firstName},
 
 I hope you're doing well! My name is Amir and I'm a Software Engineer II looking for new career opportunities. \
-If you have time, I would appreciate the chance to discuss how my skills align with open roles \
-you're looking to fill at {company}!
+If you have time, I would appreciate the chance to discuss how my skills align with any roles \
+you're looking to fill at {company}.
 
-Thank you!
-Amir
-(331) 255-6927`
+Best Regards!
+Amir Sharapov`
 
 export const CONNECTED_FOLLOW_UP_TEMPLATE = `\
 Happy {dayOfWeek} {firstName}!
